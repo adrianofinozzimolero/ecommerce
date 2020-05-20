@@ -103,7 +103,7 @@ class Category extends Model {
 														         FROM tb_products a 
 															    INNER JOIN tb_productscategories b 
 															       ON a.idproduct = b.idproduct 
-    															WHERE b.idcategory = 3
+    															WHERE b.idcategory = :idcategory
 	    													 );	
                          ", [
                          	  ":idcategory"=>$this->getidcategory()
