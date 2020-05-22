@@ -56,7 +56,7 @@ class Address extends Model {
 
 		// COM NUMERO DO ENDEREÇO
 
-		/*$results = $sql->select("CALL sp_addresses_save(:idaddress, :idperson, :desaddress, :desnumber, :descomplement, :descity, :desstate, :descountry, :deszipcode, :desdistrict)", [
+		$results = $sql->select("CALL sp_addresses_save(:idaddress, :idperson, :desaddress, :desnumber, :descomplement, :descity, :desstate, :descountry, :deszipcode, :desdistrict)", [
 			':idaddress'=>$this->getidaddress(),
 			':idperson'=>$this->getidperson(),
 			':desaddress'=>utf8_decode($this->getdesaddress()),
@@ -67,11 +67,11 @@ class Address extends Model {
 			':descountry'=>utf8_decode($this->getdescountry()),
 			':deszipcode'=>$this->getdeszipcode(),
 			':desdistrict'=>utf8_decode($this->getdesdistrict())
-		]);*/
+		]);
 
 		// SEM NÚMERO DO ENDEREÇO
 
-		$results = $sql->select("CALL sp_addresses_save(:idaddress, :idperson, :desaddress, :descomplement, :descity, :desstate, :descountry, :deszipcode, :desdistrict)", [
+		/* $results = $sql->select("CALL sp_addresses_save(:idaddress, :idperson, :desaddress, :descomplement, :descity, :desstate, :descountry, :deszipcode, :desdistrict)", [
 			':idaddress'=>$this->getidaddress(),
 			':idperson'=>$this->getidperson(),
 			':desaddress'=>utf8_decode($this->getdesaddress()),
@@ -81,7 +81,7 @@ class Address extends Model {
 			':descountry'=>utf8_decode($this->getdescountry()),
 			':deszipcode'=>$this->getdeszipcode(),
 			':desdistrict'=>utf8_decode($this->getdesdistrict())
-		]);
+		]); */
 
 		if (count($results) > 0) {
 			$this->setData($results[0]);
