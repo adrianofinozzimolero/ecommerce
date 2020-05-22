@@ -454,7 +454,8 @@ $app->get("/profile", function() {
 
 		'user'=>$user->getValues(),
 		'profileMsg'=>User::getSuccess(),
-		'profileError'=>User::getError()
+		'profileError'=>User::getError(),
+		'pages'=>[]
 	]);
 
 });
